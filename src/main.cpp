@@ -31,9 +31,6 @@ std::optional<Args> ParseCommandLine(int argc, const char *const argv[]) {
     po::store(po::parse_command_line(argc, argv, desc), vm);
     po::notify(vm);
 
-    // Выводим описание параметров программы
-    std::cout << desc;
-
     if (vm.contains("help"s)) {
         // Если был указан параметр --help, то выводим справку и возвращаем nullopt
         std::cout << desc;
